@@ -23,9 +23,9 @@ struct Item : exam::LifetimeProbe<ItemTag> {
 // Somme la valeur des objets dont la valeur atteint au moins `threshold`.
 // FIXME : `items` est reçu PAR VALEUR (copie tout le conteneur à l'appel), et
 // la boucle copie CHAQUE `Item`. Aucune de ces copies n'est nécessaire.
-inline int TotalAbove(std::vector<Item> items, int threshold) {
+inline int TotalAbove(std::vector<Item>& items, int threshold) {
   int total = 0;
-  for (Item item : items) {
+  for (Item& item : items) {
     if (item.value >= threshold) total += item.value;
   }
   return total;
