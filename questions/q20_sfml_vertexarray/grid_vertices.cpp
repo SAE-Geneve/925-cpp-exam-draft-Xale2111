@@ -17,8 +17,20 @@ sf::Color CellColor(std::uint8_t tile_value) {
 // FIXME : à implémenter dans le cadre du refactor (voir main.cpp, où le rendu
 // se fait actuellement avec un sf::RectangleShape par cellule). Cette fonction
 // doit produire la géométrie complète en un seul VertexArray de triangles.
-sf::VertexArray BuildGridVertices(const exam::Grid& /*grid*/) {
-  return sf::VertexArray(sf::PrimitiveType::Triangles);  // vide pour l'instant
+sf::VertexArray BuildGridVertices(const exam::Grid& grid) {
+  sf::VertexArray vertices;
+
+  vertices.setPrimitiveType(sf::PrimitiveType::Triangles);
+  vertices.resize(grid.Width() * grid.Height() * 6);
+  for (int y = 0; y < grid.Height(); ++y) {
+    for (int x = 0; x < grid.Width(); ++x) {
+      
+
+      vertices.append();
+    }
+  }
+
+  return vertices;
 }
 
 }  // namespace q20

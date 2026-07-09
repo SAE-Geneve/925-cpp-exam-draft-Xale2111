@@ -27,6 +27,8 @@ int main() {
     window.clear();
     // REFACTOR-START
     // Un RectangleShape par cellule : 64*64 = 4096 draw calls par frame.
+
+    /*
     for (int y = 0; y < grid.Height(); ++y) {
       for (int x = 0; x < grid.Width(); ++x) {
         sf::RectangleShape cell({q20::kCellSize, q20::kCellSize});
@@ -34,7 +36,10 @@ int main() {
         cell.setFillColor(q20::CellColor(grid.At({x, y})));
         window.draw(cell);
       }
-    }
+      }
+    }*/
+
+    window.draw(q20::BuildGridVertices(grid));
     // REFACTOR-END
     window.display();
   }
