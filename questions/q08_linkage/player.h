@@ -2,10 +2,12 @@
 #pragma once
 
 #include <string>
+#include <optional>
 
-#include "team.h"  // FIXME : dépendance circulaire (team.h inclut player.h).
 
 namespace q08 {
+
+class Team;
 
 class Player {
  public:
@@ -16,7 +18,7 @@ class Player {
   void SetTeam(Team* team) { team_ = team; }
 
   // FIXME : a besoin du type Team COMPLET (appel de TotalScore()).
-  int TeammatesScore() const { return team_->TotalScore() - score_; }
+  int TeammatesScore() const;
 
  private:
   std::string name_;

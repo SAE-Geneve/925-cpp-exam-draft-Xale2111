@@ -3,20 +3,19 @@
 
 #include <vector>
 
-#include "player.h"  // FIXME : dépendance circulaire (player.h inclut team.h).
+
+
 
 namespace q08 {
+
+class Player;
 
 class Team {
  public:
   void Add(Player* player) { members_.push_back(player); }
 
   // FIXME : a besoin du type Player COMPLET (appel de Score()).
-  int TotalScore() const {
-    int sum = 0;
-    for (const Player* player : members_) sum += player->Score();
-    return sum;
-  }
+  int TotalScore() const;
 
  private:
   std::vector<Player*> members_;
