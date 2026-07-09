@@ -1,0 +1,17 @@
+# Répertoires de build
+build/
+cmake-build-*/
+out/
+
+# IDE
+.idea/
+.vs/
+.vscode/
+
+# vcpkg
+vcpkg_installed/
+
+# Sorties de grading
+results.xml
+results.csv
+results.json
