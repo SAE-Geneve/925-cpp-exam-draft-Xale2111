@@ -25,7 +25,7 @@ struct Vec2 {
     return {x / len, y / len};
   }
 
-  // TODO 2 : remplacez ce stub par l'égalité par défaut du langage.
+
   bool operator==(const Vec2& /*other*/) const {
     return true;  // TODO : stub visiblement faux
   }
